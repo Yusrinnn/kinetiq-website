@@ -1,0 +1,128 @@
+/* Kinetiq Automation – Website
+   Konzept: Navy-Hero wie die Visitenkarte, helle Stahlweiß-Flächen für Inhalte,
+   Typenschild als Kontaktblock. Farben = feste Kinetiq-Palette. */
+@font-face{font-family:"Chakra Petch";font-weight:500;font-display:swap;src:url(fonts/ChakraPetch-Medium.woff2) format("woff2")}
+@font-face{font-family:"Chakra Petch";font-weight:600;font-display:swap;src:url(fonts/ChakraPetch-SemiBold.woff2) format("woff2")}
+@font-face{font-family:"Chakra Petch";font-weight:700;font-display:swap;src:url(fonts/ChakraPetch-Bold.woff2) format("woff2")}
+
+:root{
+  --blau:#00A0FD; --blau-tief:#0077C2; --navy:#080C15; --navy-2:#111A2A; --navy-line:#24304A;
+  --stahl:#F4F6F9; --stahl-2:#E7EBF1; --grau:#8D97A8; --ink:#141A26; --muted:#4F5A6D; --weiss:#FFFFFF;
+  --display:"Chakra Petch", "Segoe UI", system-ui, sans-serif;
+  --body:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --max:1120px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--stahl);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--blau-tief)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--blau);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:20px}
+.label{font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--blau-tief);margin:0 0 10px}
+h1,h2,h3{font-family:var(--display);line-height:1.12;text-wrap:balance;margin:0}
+h2{font-size:clamp(28px,4vw,40px);font-weight:700;color:var(--navy)}
+h3{font-size:21px;font-weight:600;color:var(--navy)}
+p{margin:0}
+
+/* Kopfzeile */
+.top{position:sticky;top:0;z-index:10;background:rgba(8,12,21,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--navy-line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.top img{height:30px;width:auto}
+.nav{display:flex;gap:22px;align-items:center}
+.nav a{font-family:var(--display);font-weight:500;font-size:15px;letter-spacing:.04em;color:var(--stahl);text-decoration:none}
+.nav a:hover{color:var(--blau)}
+.nav .cta{background:var(--blau);color:var(--navy);padding:8px 14px;border-radius:6px;font-weight:600}
+.nav .cta:hover{color:var(--navy);background:#33B4FF}
+@media (max-width:720px){.nav a:not(.cta){display:none}}
+
+/* Hero */
+.hero{background:var(--navy);color:var(--stahl);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--navy-line) 1px,transparent 1px),linear-gradient(90deg,var(--navy-line) 1px,transparent 1px);background-size:48px 48px;opacity:.35;mask-image:linear-gradient(180deg,#000 0%,transparent 85%)}
+.hero .wrap{position:relative;padding-block:84px 96px;display:grid;gap:28px}
+.status{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--grau);border:1px solid var(--navy-line);border-radius:999px;padding:6px 14px;width:fit-content}
+.status i{width:9px;height:9px;border-radius:50%;background:#2BD67B;box-shadow:0 0 0 4px rgba(43,214,123,.18)}
+.hero h1{font-size:clamp(40px,7vw,76px);font-weight:700;color:var(--weiss);max-width:14ch}
+.hero h1 em{font-style:normal;color:var(--blau)}
+.hero .lead{font-size:clamp(18px,2.2vw,21px);color:#C9D1DE;max-width:56ch}
+.speed{display:flex;flex-direction:column;gap:7px;width:68px}
+.speed span{height:7px;background:var(--blau);border-radius:1px}
+.speed span:nth-child(2){margin-left:18px}.speed span:nth-child(3){margin-left:36px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:.03em;text-decoration:none;padding:13px 20px;border-radius:6px;display:inline-block}
+.btn.primary{background:var(--blau);color:var(--navy)}
+.btn.primary:hover{background:#33B4FF}
+.btn.ghost{border:1px solid var(--navy-line);color:var(--stahl)}
+.btn.ghost:hover{border-color:var(--blau);color:var(--blau)}
+
+/* Abschnitte */
+section.block{padding-block:88px}
+.head{display:grid;gap:12px;margin-bottom:40px;max-width:68ch}
+.head p{color:var(--muted)}
+
+/* Leistungen */
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:18px}
+.service{background:var(--weiss);border:1px solid var(--stahl-2);border-radius:8px;padding:26px 24px;display:grid;gap:10px;align-content:start}
+.service .ico{width:42px;height:42px;color:var(--blau-tief)}
+.service p{color:var(--muted);font-size:16px}
+.service ul{margin:4px 0 0;padding-left:18px;color:var(--muted);font-size:15px;display:grid;gap:3px}
+
+/* Ablauf */
+.dark{background:var(--navy);color:var(--stahl)}
+.dark h2,.dark h3{color:var(--weiss)}
+.dark .label{color:var(--blau)}
+.dark .head p{color:#B7C0CF}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:0;border-top:1px solid var(--navy-line)}
+.step{padding:26px 24px 28px 0;display:grid;gap:10px;align-content:start;border-bottom:1px solid var(--navy-line)}
+.step .nr{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.12em;color:var(--blau)}
+.step p{color:#B7C0CF;font-size:16px}
+
+/* Warum */
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:40px;align-items:start}
+.facts{display:grid;gap:18px}
+.fact{display:grid;grid-template-columns:28px 1fr;gap:12px}
+.fact svg{width:22px;height:22px;color:var(--blau-tief);margin-top:3px}
+.fact b{font-family:var(--display);font-weight:600;font-size:18px;color:var(--navy);display:block}
+.fact span{color:var(--muted);font-size:16px}
+
+/* Team */
+.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:22px;max-width:920px}
+.person{background:var(--weiss);border:1px solid var(--stahl-2);border-radius:8px;overflow:hidden}
+.person{display:grid;grid-template-columns:auto 1fr;align-items:center}
+.mono{width:76px;height:76px;margin:20px 0 20px 20px;border-radius:8px;background:var(--navy);color:var(--blau);font-family:var(--display);font-weight:700;font-size:26px;letter-spacing:.04em;display:grid;place-items:center}
+.person .info{padding:18px 20px 20px;display:grid;gap:4px}
+.person .role{font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--blau-tief)}
+.person .q{color:var(--muted);font-size:15px}
+.person a{font-size:15px;text-decoration:none;overflow-wrap:anywhere}
+
+/* Kontakt als Typenschild */
+.contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:40px;align-items:center}
+.plate{background:linear-gradient(160deg,#1A2335,#0B1120);border:1px solid var(--navy-line);border-radius:10px;padding:26px 26px 22px;position:relative;box-shadow:0 18px 40px rgba(8,12,21,.25)}
+.plate::before,.plate::after{content:"";position:absolute;top:14px;width:9px;height:9px;border-radius:50%;background:#3A4660;box-shadow:inset 0 1px 1px rgba(0,0,0,.6)}
+.plate::before{left:14px}.plate::after{right:14px}
+.plate img{height:34px;width:auto;margin:6px 0 18px}
+.plate dl{margin:0;display:grid;grid-template-columns:max-content 1fr;gap:9px 18px;font-size:15px}
+.plate dt{font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--grau);padding-top:2px}
+.plate dd{margin:0;color:var(--stahl);overflow-wrap:anywhere}
+.plate dd a{color:var(--stahl);text-decoration:none}
+.plate dd a:hover{color:var(--blau)}
+.plate .ce{margin-top:18px;padding-top:12px;border-top:1px solid var(--navy-line);font-family:var(--display);font-size:12px;letter-spacing:.14em;color:var(--grau);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* Fußzeile */
+footer{background:var(--navy);color:var(--grau);font-size:14px}
+footer .wrap{padding-block:34px;display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center}
+footer a{color:var(--stahl);text-decoration:none}
+footer a:hover{color:var(--blau)}
+footer nav{display:flex;gap:20px;flex-wrap:wrap}
+
+/* Rechtstexte */
+.legal{padding-block:64px 88px}
+.legal .wrap{max-width:760px}
+.legal h1{font-size:clamp(32px,5vw,44px);color:var(--navy);margin-bottom:28px}
+.legal h2{font-size:22px;margin:34px 0 10px}
+.legal p,.legal li{color:var(--ink);font-size:16px}
+.legal p+p{margin-top:10px}
+.legal address{font-style:normal}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
