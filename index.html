@@ -3,173 +3,161 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Kinetiq Automation – Prozessoptimierung, Automatisierung, Robotik</title>
-<meta name="description" content="Kinetiq Automation aus Velbert optimiert und automatisiert Produktionsprozesse – von der Analyse über Robotik und Steuerungstechnik bis zur Inbetriebnahme.">
+<title>Kinetiq Automation – Website im Aufbau</title>
+<meta name="description" content="Kinetiq Automation aus Velbert: Prozessoptimierung, Automatisierung und Robotik. Unsere Website ist im Aufbau – erreichen Sie uns direkt per Telefon, E-Mail oder Social Media.">
 <meta property="og:title" content="Kinetiq Automation">
-<meta property="og:description" content="Prozessoptimierung · Automatisierung · Robotik – aus Velbert, NRW.">
+<meta property="og:description" content="Prozessoptimierung · Automatisierung · Robotik – aus Velbert, NRW. Website im Aufbau.">
 <meta property="og:image" content="https://kinetiq-automation.de/assets/img/og.jpg">
-<meta property="og:type" content="website">
 <meta name="theme-color" content="#080C15">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/ChakraPetch-Bold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/site.css">
+<style>
+@font-face{font-family:"Chakra Petch";font-weight:500;font-display:swap;src:url(assets/fonts/ChakraPetch-Medium.woff2) format("woff2")}
+@font-face{font-family:"Chakra Petch";font-weight:600;font-display:swap;src:url(assets/fonts/ChakraPetch-SemiBold.woff2) format("woff2")}
+@font-face{font-family:"Chakra Petch";font-weight:700;font-display:swap;src:url(assets/fonts/ChakraPetch-Bold.woff2) format("woff2")}
+/* Einseitige Übergangsseite: Video-Hintergrund, Baustellen-Hinweis, Kontakt */
+:root{--blau:#00A0FD;--blau-tief:#0077C2;--navy:#080C15;--panel:rgba(12,18,30,.78);--line:#24304A;--stahl:#F4F6F9;--grau:#8D97A8;--lead:#C9D1DE;--gelb:#F5C542;
+--display:"Chakra Petch","Segoe UI",system-ui,sans-serif;--body:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--navy);color:var(--stahl);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--stahl)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--blau);outline-offset:2px}
+.bg{position:fixed;inset:0;z-index:-1;overflow:hidden;background:var(--navy) url(assets/video/poster.jpg) center/cover no-repeat}
+.bg video{width:100%;height:100%;object-fit:cover}
+.bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,12,21,.62) 0%,rgba(8,12,21,.82) 55%,rgba(8,12,21,.95) 100%)}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:22px}
+header img{height:34px;width:auto}
+.social{display:flex;gap:10px}
+.social a{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:600;font-size:14px;text-decoration:none;border:1px solid var(--line);background:rgba(8,12,21,.55);border-radius:999px;padding:7px 14px}
+.social a:hover{border-color:var(--blau);color:var(--blau)}
+.social svg{width:16px;height:16px}
+@media (max-width:560px){.social a span{display:none}.social a{padding:8px}}
+
+.hero{padding-block:56px 40px;display:grid;gap:22px}
+.build{display:inline-flex;align-items:center;gap:12px;width:fit-content;font-family:var(--display);font-weight:700;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);background:repeating-linear-gradient(-45deg,var(--gelb) 0 14px,#E0AE24 14px 28px);padding:8px 16px;border-radius:4px}
+.build b{background:var(--navy);color:var(--gelb);padding:2px 8px;border-radius:3px;letter-spacing:.08em}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(38px,7vw,70px);line-height:1.06;margin:0;max-width:15ch;color:#fff;text-wrap:balance}
+h1 em{font-style:normal;color:var(--blau)}
+.lead{margin:0;font-size:clamp(17px,2.1vw,20px);color:var(--lead);max-width:58ch}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.tags li{font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--line);background:rgba(8,12,21,.55);border-radius:4px;padding:6px 12px;color:var(--stahl)}
+
+h2{font-family:var(--display);font-weight:700;font-size:clamp(24px,3.4vw,32px);margin:0 0 18px;color:#fff}
+.label{font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--blau);margin:0 0 6px}
+section.block{padding-block:28px}
+.people{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:16px}
+.person{background:var(--panel);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:10px;padding:20px 20px 18px;display:grid;gap:4px;align-content:start;min-width:0}
+.person .role{font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--blau)}
+.person h3{font-family:var(--display);font-weight:600;font-size:21px;margin:2px 0 0;color:#fff}
+.person .q{color:var(--grau);font-size:14px;margin-bottom:8px}
+.person a{text-decoration:none;font-size:15px;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.person a:hover{color:var(--blau)}
+.person .k{display:inline-block;width:18px;font-family:var(--display);font-weight:700;color:var(--blau)}
+
+.formbox{background:var(--panel);backdrop-filter:blur(6px);border:1px solid var(--line);border-radius:10px;padding:24px;display:grid;gap:16px}
+.formbox p{margin:0;color:var(--lead)}
+form{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px}
+label{display:grid;gap:6px;font-family:var(--display);font-weight:600;font-size:13px;letter-spacing:.06em;color:var(--grau)}
+input,textarea{font:inherit;font-size:16px;color:var(--stahl);background:rgba(8,12,21,.7);border:1px solid var(--line);border-radius:6px;padding:11px 12px;width:100%}
+textarea{min-height:120px;resize:vertical}
+.full{grid-column:1/-1}
+button{font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:.03em;background:var(--blau);color:var(--navy);border:0;border-radius:6px;padding:13px 20px;cursor:pointer;width:fit-content}
+button:hover{background:#33B4FF}
+.hint{font-size:13px;color:var(--grau)}
+
+footer .wrap{padding-block:30px 40px;display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;color:var(--grau);font-size:14px;border-top:1px solid var(--line);margin-top:28px}
+footer nav{display:flex;gap:18px}
+footer a{text-decoration:none}
+footer a:hover{color:var(--blau)}
+@media (prefers-reduced-motion:reduce){.bg video{display:none}}
+</style>
 </head>
 <body>
+<div class="bg" aria-hidden="true">
+  <video autoplay muted loop playsinline preload="auto" poster="assets/video/poster.jpg"><source src="assets/video/hero.mp4" type="video/mp4"></video>
+</div>
 
-<header class="top">
+<header>
   <div class="wrap">
-    <a href="#start" aria-label="Kinetiq Automation – zum Seitenanfang"><img src="assets/img/logo.svg" alt="Kinetiq Automation" width="180" height="40"></a>
-    <nav class="nav" aria-label="Hauptnavigation">
-      <a href="#leistungen">Leistungen</a>
-      <a href="#ablauf">Ablauf</a>
-      <a href="#team">Team</a>
-      <a class="cta" href="#kontakt">Kontakt</a>
+    <img src="assets/img/logo.svg" alt="Kinetiq Automation" width="180" height="40">
+    <nav class="social" aria-label="Social Media">
+      <a href="https://www.instagram.com/kinetiq_automation/" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg><span>Instagram</span></a>
+      <a href="https://www.tiktok.com/@kinetiq_automation" rel="noopener" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.5 2.6 2.3 4.4 5 4.6"/></svg><span>TikTok</span></a>
     </nav>
   </div>
 </header>
 
-<main id="start">
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="wrap">
-      <span class="status"><i aria-hidden="true"></i>Anlage läuft</span>
-      <div class="speed" aria-hidden="true"><span></span><span></span><span></span></div>
-      <h1 id="hero-title">Prozesse, die <em>laufen.</em></h1>
-      <p class="lead">Wir optimieren und automatisieren Produktionsprozesse – von der Analyse an Ihrer Anlage über Robotik und Steuerungstechnik bis zur Inbetriebnahme. Aus Velbert, für Industrie und Mittelstand in NRW.</p>
-      <div class="btns">
-        <a class="btn primary" href="#kontakt">Projekt anfragen</a>
-        <a class="btn ghost" href="#leistungen">Leistungen ansehen</a>
-      </div>
+<main class="wrap">
+  <section class="hero" aria-labelledby="t">
+    <span class="build">Website im Aufbau <b>BALD MEHR</b></span>
+    <h1 id="t">Prozesse, die <em>laufen.</em></h1>
+    <p class="lead">Kinetiq Automation aus Velbert optimiert und automatisiert Produktionsprozesse – von der Analyse an Ihrer Anlage über Robotik und Steuerungstechnik bis zur Inbetriebnahme. Unsere Website entsteht gerade. Bis dahin erreichen Sie uns direkt.</p>
+    <ul class="tags" aria-label="Leistungen"><li>Prozessoptimierung</li><li>Automatisierung</li><li>Robotik</li><li>Inbetriebnahme</li></ul>
+  </section>
+
+  <section class="block" aria-labelledby="k">
+    <p class="label">Ansprechpartner</p>
+    <h2 id="k">Direkt erreichbar</h2>
+    <div class="people">
+      <article class="person">
+        <span class="role">Gesellschafter · Automatisierung</span>
+        <h3>Justin Dominiak</h3>
+        <span class="q">Staatl. gepr. Maschinenbautechniker</span>
+        <a href="tel:+4917632490124"><span class="k">T</span>+49 176 32490124</a>
+        <a href="mailto:justin@kinetiq-automation.de"><span class="k">E</span>justin@kinetiq-automation.de</a>
+      </article>
+      <article class="person">
+        <span class="role">Gesellschafter · Automatisierung</span>
+        <h3>Frederik Glowik</h3>
+        <span class="q">Staatl. gepr. Maschinenbautechniker</span>
+        <a href="tel:+4917680649531"><span class="k">T</span>+49 176 80649531</a>
+        <a href="mailto:frederik@kinetiq-automation.de"><span class="k">E</span>frederik@kinetiq-automation.de</a>
+      </article>
+      <article class="person">
+        <span class="role">Elektrotechnik</span>
+        <h3>Christian Schmitz</h3>
+        <span class="q">Elektroingenieur</span>
+        <a href="tel:+4916099446781"><span class="k">T</span>+49 160 99446781</a>
+      </article>
     </div>
   </section>
 
-  <section class="block" id="leistungen" aria-labelledby="l-title">
-    <div class="wrap">
-      <div class="head">
-        <p class="label">Leistungen</p>
-        <h2 id="l-title">Prozessoptimierung · Automatisierung · Robotik</h2>
-        <p>Wir schauen zuerst auf den Prozess und dann auf die Technik. Steuerungen und Bedienoberflächen sind dabei ein Werkzeug, nicht das Ziel.</p>
-      </div>
-      <div class="services">
-        <article class="service">
-          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 20h18M6 16V9M11 16V5M16 16v-4M21 16V8"/></svg>
-          <h3>Prozessoptimierung</h3>
-          <p>Taktzeiten, Engpässe und Stillstände analysieren und daraus konkrete Verbesserungen ableiten.</p>
-          <ul><li>Analyse vor Ort</li><li>Schwachstellen &amp; Potenziale</li><li>Umsetzbare Maßnahmen</li></ul>
-        </article>
-        <article class="service">
-          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M7 20h10M12 16v4M7 8h4M7 11h7"/></svg>
-          <h3>Automatisierung</h3>
-          <p>Manuelle Abläufe automatisieren und bestehende Anlagen modernisieren – inklusive Steuerungs- und Bedienkonzept.</p>
-          <ul><li>SPS-Programmierung</li><li>HMI / Bedienoberflächen</li><li>Retrofit bestehender Anlagen</li></ul>
-        </article>
-        <article class="service">
-          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 20h7M7 20v-5l5-5 4 4"/><circle cx="12" cy="10" r="1.6"/><path d="M16 14l3-3M19 11l1.5 1.5M19 11l-1.5-1.5"/></svg>
-          <h3>Robotik</h3>
-          <p>Roboterzellen konzipieren und in bestehende Prozesse integrieren – vom Greifer bis zur Schutzumhausung.</p>
-          <ul><li>Zellenkonzept &amp; Layout</li><li>Greifer &amp; Vorrichtungen</li><li>Integration &amp; Programmierung</li></ul>
-        </article>
-        <article class="service">
-          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8 12.5l2.6 2.6L16.2 9.5"/></svg>
-          <h3>Inbetriebnahme &amp; Service</h3>
-          <p>Saubere Übergabe mit Dokumentation – und ein fester Ansprechpartner, wenn später etwas klemmt.</p>
-          <ul><li>Inbetriebnahme vor Ort</li><li>Abnahme &amp; Dokumentation</li><li>Wartung &amp; Support</li></ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="block dark" id="ablauf" aria-labelledby="a-title">
-    <div class="wrap">
-      <div class="head">
-        <p class="label">Ablauf</p>
-        <h2 id="a-title">Vom ersten Gespräch bis zur laufenden Anlage</h2>
-        <p>Vier Schritte, ein Ansprechpartner. Sie wissen jederzeit, wo Ihr Projekt steht.</p>
-      </div>
-      <div class="steps">
-        <div class="step"><span class="nr">01 · ANALYSE</span><h3>Vor Ort ansehen</h3><p>Wir schauen uns Anlage und Prozess an und klären, was erreicht werden soll.</p></div>
-        <div class="step"><span class="nr">02 · KONZEPT</span><h3>Lösung &amp; Angebot</h3><p>Sie bekommen ein nachvollziehbares Konzept mit festem Leistungsumfang.</p></div>
-        <div class="step"><span class="nr">03 · UMSETZUNG</span><h3>Bauen &amp; programmieren</h3><p>Wir setzen um und stimmen uns mit Ihren Leuten und Partnern ab.</p></div>
-        <div class="step"><span class="nr">04 · ÜBERGABE</span><h3>Inbetriebnahme</h3><p>Abnahme, Dokumentation, Einweisung – und Support, wenn Sie ihn brauchen.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" aria-labelledby="w-title">
-    <div class="wrap why">
-      <div class="head" style="margin-bottom:0">
-        <p class="label">Warum Kinetiq</p>
-        <h2 id="w-title">Aus der Produktion, für die Produktion</h2>
-        <p>Wir sind staatlich geprüfte Maschinenbautechniker und kommen selbst aus der Fertigung. Wir wissen, was ein Stillstand kostet und wie sich eine Anlage im Schichtbetrieb anfühlt.</p>
-      </div>
-      <div class="facts">
-        <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><div><b>Praxis statt Theorie</b><span>Erfahrung aus Roboterzellen, Sonderanlagen und eigenen Konstruktionen.</span></div></div>
-        <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><div><b>Kurze Wege</b><span>Kein Callcenter, kein Weiterreichen – Sie sprechen direkt mit den Gesellschaftern.</span></div></div>
-        <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><div><b>Mechanik und Steuerung zusammen</b><span>Wir denken Konstruktion, Prozess und Automatisierung als ein System.</span></div></div>
-        <div class="fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><div><b>In der Region</b><span>Velbert, Düsseldorf, Wuppertal, Essen und das Bergische Land – schnell vor Ort.</span></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="team" aria-labelledby="t-title" style="background:var(--stahl-2)">
-    <div class="wrap">
-      <div class="head">
-        <p class="label">Team</p>
-        <h2 id="t-title">Ihre Ansprechpartner</h2>
-      </div>
-      <div class="team">
-        <article class="person">
-          <div class="mono" aria-hidden="true">JD</div>
-          <div class="info">
-            <span class="role">Gesellschafter · Automatisierung</span>
-            <h3>Justin Dominiak</h3>
-            <span class="q">Staatl. gepr. Maschinenbautechniker</span>
-            <a href="mailto:justin@kinetiq-automation.de">justin@kinetiq-automation.de</a>
-          </div>
-        </article>
-        <article class="person">
-          <div class="mono" aria-hidden="true">FG</div>
-          <div class="info">
-            <span class="role">Gesellschafter · Automatisierung</span>
-            <h3>Frederik Glowik</h3>
-            <span class="q">Staatl. gepr. Maschinenbautechniker</span>
-            <a href="mailto:frederik@kinetiq-automation.de">frederik@kinetiq-automation.de</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="block" id="kontakt" aria-labelledby="k-title">
-    <div class="wrap contact">
-      <div class="head" style="margin-bottom:0">
-        <p class="label">Kontakt</p>
-        <h2 id="k-title">Erzählen Sie uns von Ihrer Anlage.</h2>
-        <p>Ein kurzer Anruf oder eine Mail mit ein paar Eckdaten reicht. Wir melden uns innerhalb von zwei Werktagen und schauen gern auch vor Ort vorbei.</p>
-        <div class="btns" style="margin-top:12px">
-          <a class="btn primary" href="mailto:justin@kinetiq-automation.de?subject=Anfrage%20Kinetiq%20Automation">E-Mail schreiben</a>
+  <section class="block" aria-labelledby="f">
+    <p class="label">Anfrage</p>
+    <h2 id="f">Sie möchten sich bei uns melden?</h2>
+    <div class="formbox">
+      <p>Ein paar Eckdaten reichen. Wir melden uns schnellstmöglich zurück.</p>
+      <form id="anfrage">
+        <label>Name<input id="f-name" name="name" required autocomplete="name"></label>
+        <label>Firma<input id="f-firma" name="firma" autocomplete="organization"></label>
+        <label>Telefon (optional)<input id="f-tel" name="tel" type="tel" autocomplete="tel"></label>
+        <label class="full">Worum geht es?<textarea id="f-text" name="text" required placeholder="z. B. Anlage, Problem, gewünschter Zeitraum"></textarea></label>
+        <div class="full" style="display:grid;gap:8px">
+          <button type="submit">Anfrage per E-Mail senden</button>
+          <span class="hint">Öffnet Ihr E-Mail-Programm mit der fertigen Nachricht an uns. Auf dieser Website werden keine Daten gespeichert.</span>
         </div>
-      </div>
-      <div class="plate" aria-label="Kontaktdaten">
-        <img src="assets/img/logo.svg" alt="Kinetiq Automation" width="160" height="36">
-        <dl>
-          <dt>Firma</dt><dd>Kinetiq Automation GbR</dd>
-          <dt>Leistung</dt><dd>Prozessoptimierung · Automatisierung · Robotik</dd>
-          <dt>Telefon</dt><dd><a href="tel:+4917632490124">+49 176 32490124</a></dd>
-          <dt>E-Mail</dt><dd><a href="mailto:justin@kinetiq-automation.de">justin@kinetiq-automation.de</a></dd>
-          <dt>Standort</dt><dd>Velbert · NRW</dd>
-        </dl>
-        <div class="ce"><span>BAUJAHR 2026</span><span>MADE IN VELBERT</span></div>
-      </div>
+      </form>
     </div>
   </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Kinetiq Automation GbR</span>
-    <nav aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="https://www.instagram.com/kinetiq_automation/" rel="noopener">Instagram</a></nav>
+    <span>© 2026 Kinetiq Automation GbR · Velbert</span>
+    <nav aria-label="Rechtliches"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></nav>
   </div>
 </footer>
+
+<script>
+document.getElementById('anfrage').addEventListener('submit',function(e){
+  e.preventDefault();
+  var v=function(id){return document.getElementById(id).value.trim()};
+  var body='Name: '+v('f-name')+'\nFirma: '+v('f-firma')+'\nTelefon: '+v('f-tel')+'\n\n'+v('f-text');
+  location.href='mailto:justin@kinetiq-automation.de,frederik@kinetiq-automation.de?subject='+encodeURIComponent('Anfrage über kinetiq-automation.de – '+v('f-name'))+'&body='+encodeURIComponent(body);
+});
+</script>
 </body>
 </html>
