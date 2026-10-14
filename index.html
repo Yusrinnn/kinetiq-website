@@ -29,7 +29,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,12,21,.62) 0%,rgba(8,12,21,.82) 55%,rgba(8,12,21,.95) 100%)}
 .wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
 header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:22px}
-header img{height:34px;width:auto}
+header img{height:54px;width:auto}
+@media (max-width:560px){header img{height:40px}}
 .social{display:flex;gap:10px}
 .social a{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:600;font-size:14px;text-decoration:none;border:1px solid var(--line);background:rgba(8,12,21,.55);border-radius:999px;padding:7px 14px}
 .social a:hover{border-color:var(--blau);color:var(--blau)}
