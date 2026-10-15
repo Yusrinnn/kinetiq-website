@@ -63,8 +63,8 @@ p{margin:0}
 .facts li{display:flex;align-items:center;gap:8px}
 .facts li::before{content:"";width:6px;height:6px;border-radius:1px;background:var(--blau)}
 .art{display:flex;justify-content:center}
-.art svg{width:min(100%,540px);height:auto}
-@media (max-width:880px){.hero .wrap{grid-template-columns:1fr;padding-block:48px 40px}.art{order:-1}.art svg{width:min(92vw,420px)}}
+.art svg{width:min(100%,460px);height:auto}
+@media (max-width:880px){.hero .wrap{grid-template-columns:1fr;padding-block:48px 40px}.art{order:-1}.art svg{width:min(80vw,320px)}}
 
 /* Abschnitte */
 section.blk{padding-block:88px}
@@ -167,8 +167,8 @@ footer a:hover{color:#fff}
         </ul>
       </div>
       <div class="art" aria-hidden="true">
-        <!-- Zahnrad-Q dreht sich (Schweif steht), darunter eine Roboterhand, die es hält -->
-        <svg id="qart" viewBox="-200 -112 450 370" xmlns="http://www.w3.org/2000/svg">
+        <!-- Zahnrad-Q dreht sich (Schweif steht) in einem technischen Messkreis -->
+        <svg id="qart" viewBox="-180 -180 360 360" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="arm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A2436"/><stop offset="1" stop-color="#1A2436" stop-opacity="0"/></linearGradient>
             <linearGradient id="met" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1B2638"/><stop offset=".5" stop-color="#2A374D"/><stop offset="1" stop-color="#1B2638"/></linearGradient>
@@ -182,40 +182,83 @@ footer a:hover{color:#fff}
             <mask id="mL" maskUnits="userSpaceOnUse" x="-200" y="-112" width="450" height="370"><rect x="-200" y="-112" width="450" height="370" fill="url(#fadeL)"/></mask>
             <radialGradient id="glow"><stop offset="0" stop-color="#00A0FD" stop-opacity=".22"/><stop offset="1" stop-color="#00A0FD" stop-opacity="0"/></radialGradient>
           </defs>
-          <circle r="135" fill="url(#glow)"/>
-          <!-- Roboterhand kommt von unten rechts: offene Handfläche, das Zahnrad-Q schwebt darüber -->
-          <g mask="url(#mL)" filter="url(#shadow)"><g transform="translate(34 150) rotate(17) scale(-1.3 1.3) translate(20 -145)">
-            <rect x="-235" y="128" width="137" height="44" rx="6" fill="url(#cylArm)"/>
-            <path d="M-235 150H-103" stroke="#0C1220" stroke-opacity=".5" stroke-width="1"/>
-            <rect x="-113" y="120" width="24" height="60" rx="5" fill="url(#cyl)" stroke="#3A4A63" stroke-width="1"/>
-            <rect x="-109" y="126" width="3" height="48" rx="1.5" fill="#00A0FD" opacity=".85"/>
-            <rect x="25.6" y="121.0" width="45.5" height="14" rx="7.0" transform="rotate(-9.9 28.0 128.0)" fill="url(#cylD)" stroke="#3A4A63" stroke-width=".9"/>
-            <rect x="65.6" y="114.0" width="38.1" height="14" rx="7.0" transform="rotate(-15.7 68.0 121.0)" fill="url(#cylD)" stroke="#3A4A63" stroke-width=".9"/>
-            <rect x="97.6" y="105.0" width="30.5" height="14" rx="7.0" transform="rotate(-30.6 100.0 112.0)" fill="url(#cylD)" stroke="#3A4A63" stroke-width=".9"/>
-            <circle cx="68.0" cy="121.0" r="4.2" fill="url(#joint)" stroke="#00A0FD" stroke-width="1.3"/>
-            <circle cx="100.0" cy="112.0" r="4.2" fill="url(#joint)" stroke="#00A0FD" stroke-width="1.3"/>
-            <rect x="29.6" y="129.0" width="47.2" height="14" rx="7.0" transform="rotate(-6.8 32.0 136.0)" fill="url(#cylD)" stroke="#3A4A63" stroke-width=".9"/>
-            <rect x="71.6" y="124.0" width="39.6" height="14" rx="7.0" transform="rotate(-11.6 74.0 131.0)" fill="url(#cylD)" stroke="#3A4A63" stroke-width=".9"/>
-            <rect x="105.6" y="117.0" width="32.2" height="14" rx="7.0" transform="rotate(-28.4 108.0 124.0)" fill="url(#cylD)" stroke="#3A4A63" stroke-width=".9"/>
-            <circle cx="74.0" cy="131.0" r="4.2" fill="url(#joint)" stroke="#00A0FD" stroke-width="1.3"/>
-            <circle cx="108.0" cy="124.0" r="4.2" fill="url(#joint)" stroke="#00A0FD" stroke-width="1.3"/>
-            <rect x="31.6" y="138.0" width="49.0" height="14" rx="7.0" transform="rotate(-3.9 34.0 145.0)" fill="url(#cyl)" stroke="#3A4A63" stroke-width=".9"/>
-            <rect x="75.6" y="135.0" width="39.3" height="14" rx="7.0" transform="rotate(-8.4 78.0 142.0)" fill="url(#cyl)" stroke="#3A4A63" stroke-width=".9"/>
-            <rect x="109.6" y="130.0" width="32.2" height="14" rx="7.0" transform="rotate(-23.7 112.0 137.0)" fill="url(#cyl)" stroke="#3A4A63" stroke-width=".9"/>
-            <circle cx="78.0" cy="142.0" r="4.2" fill="url(#joint)" stroke="#00A0FD" stroke-width="1.3"/>
-            <circle cx="112.0" cy="137.0" r="4.2" fill="url(#joint)" stroke="#00A0FD" stroke-width="1.3"/>
-            <rect x="29.8" y="147.5" width="42.5" height="13" rx="6.5" transform="rotate(0.0 32.0 154.0)" fill="url(#cyl)" stroke="#3A4A63" stroke-width=".9"/>
-            <rect x="67.8" y="147.5" width="34.7" height="13" rx="6.5" transform="rotate(-5.7 70.0 154.0)" fill="url(#cyl)" stroke="#3A4A63" stroke-width=".9"/>
-            <rect x="97.8" y="144.5" width="28.0" height="13" rx="6.5" transform="rotate(-20.0 100.0 151.0)" fill="url(#cyl)" stroke="#3A4A63" stroke-width=".9"/>
-            <circle cx="70.0" cy="154.0" r="3.9" fill="url(#joint)" stroke="#00A0FD" stroke-width="1.3"/>
-            <circle cx="100.0" cy="151.0" r="3.9" fill="url(#joint)" stroke="#00A0FD" stroke-width="1.3"/>
-            <path d="M-92 124Q-30 113 40 124Q50 126 50 136V156Q50 166 40 167Q-30 176 -92 172Z" fill="url(#palm)" stroke="#3A4A63" stroke-width="1"/>
-            <path d="M-84 128Q-30 119 36 128" fill="none" stroke="#5A6B86" stroke-width="1.4" stroke-linecap="round" opacity=".7"/>
-            <path d="M-70 152H22" stroke="#0C1220" stroke-width="2" stroke-linecap="round"/><circle cx="-24" cy="160" r="3" fill="#00A0FD"/>
-            <rect x="-46.7" y="124.0" width="41.7" height="16" rx="8.0" transform="rotate(-19.4 -44.0 132.0)" fill="url(#cyl)" stroke="#3A4A63" stroke-width=".9"/>
-            <rect x="-12.7" y="112.0" width="36.4" height="16" rx="8.0" transform="rotate(-13.1 -10.0 120.0)" fill="url(#cyl)" stroke="#3A4A63" stroke-width=".9"/>
-            <circle cx="-10.0" cy="120.0" r="4.8" fill="url(#joint)" stroke="#00A0FD" stroke-width="1.3"/>
-          </g></g>
+          <circle r="150" fill="url(#glow)"/>
+          <!-- Technischer Messkreis um das Zahnrad: feine Skala, steht still -->
+          <circle r="128" fill="none" stroke="#22304A" stroke-width="1"/>
+          <circle r="150" fill="none" stroke="#22304A" stroke-width="1" stroke-dasharray="2 6"/>
+          <line x1="128.0" y1="0.0" x2="142.0" y2="0.0" stroke="#00A0FD" stroke-width="1.6"/>
+          <line x1="127.5" y1="11.2" x2="133.5" y2="11.7" stroke="#34435C" stroke-width="1"/>
+          <line x1="126.1" y1="22.2" x2="132.0" y2="23.3" stroke="#34435C" stroke-width="1"/>
+          <line x1="123.6" y1="33.1" x2="129.4" y2="34.7" stroke="#34435C" stroke-width="1"/>
+          <line x1="120.3" y1="43.8" x2="125.9" y2="45.8" stroke="#34435C" stroke-width="1"/>
+          <line x1="116.0" y1="54.1" x2="121.4" y2="56.6" stroke="#34435C" stroke-width="1"/>
+          <line x1="110.9" y1="64.0" x2="123.0" y2="71.0" stroke="#34435C" stroke-width="1.6"/>
+          <line x1="104.9" y1="73.4" x2="109.8" y2="76.9" stroke="#34435C" stroke-width="1"/>
+          <line x1="98.1" y1="82.3" x2="102.6" y2="86.1" stroke="#34435C" stroke-width="1"/>
+          <line x1="90.5" y1="90.5" x2="94.8" y2="94.8" stroke="#34435C" stroke-width="1"/>
+          <line x1="82.3" y1="98.1" x2="86.1" y2="102.6" stroke="#34435C" stroke-width="1"/>
+          <line x1="73.4" y1="104.9" x2="76.9" y2="109.8" stroke="#34435C" stroke-width="1"/>
+          <line x1="64.0" y1="110.9" x2="71.0" y2="123.0" stroke="#34435C" stroke-width="1.6"/>
+          <line x1="54.1" y1="116.0" x2="56.6" y2="121.4" stroke="#34435C" stroke-width="1"/>
+          <line x1="43.8" y1="120.3" x2="45.8" y2="125.9" stroke="#34435C" stroke-width="1"/>
+          <line x1="33.1" y1="123.6" x2="34.7" y2="129.4" stroke="#34435C" stroke-width="1"/>
+          <line x1="22.2" y1="126.1" x2="23.3" y2="132.0" stroke="#34435C" stroke-width="1"/>
+          <line x1="11.2" y1="127.5" x2="11.7" y2="133.5" stroke="#34435C" stroke-width="1"/>
+          <line x1="0.0" y1="128.0" x2="0.0" y2="142.0" stroke="#00A0FD" stroke-width="1.6"/>
+          <line x1="-11.2" y1="127.5" x2="-11.7" y2="133.5" stroke="#34435C" stroke-width="1"/>
+          <line x1="-22.2" y1="126.1" x2="-23.3" y2="132.0" stroke="#34435C" stroke-width="1"/>
+          <line x1="-33.1" y1="123.6" x2="-34.7" y2="129.4" stroke="#34435C" stroke-width="1"/>
+          <line x1="-43.8" y1="120.3" x2="-45.8" y2="125.9" stroke="#34435C" stroke-width="1"/>
+          <line x1="-54.1" y1="116.0" x2="-56.6" y2="121.4" stroke="#34435C" stroke-width="1"/>
+          <line x1="-64.0" y1="110.9" x2="-71.0" y2="123.0" stroke="#34435C" stroke-width="1.6"/>
+          <line x1="-73.4" y1="104.9" x2="-76.9" y2="109.8" stroke="#34435C" stroke-width="1"/>
+          <line x1="-82.3" y1="98.1" x2="-86.1" y2="102.6" stroke="#34435C" stroke-width="1"/>
+          <line x1="-90.5" y1="90.5" x2="-94.8" y2="94.8" stroke="#34435C" stroke-width="1"/>
+          <line x1="-98.1" y1="82.3" x2="-102.6" y2="86.1" stroke="#34435C" stroke-width="1"/>
+          <line x1="-104.9" y1="73.4" x2="-109.8" y2="76.9" stroke="#34435C" stroke-width="1"/>
+          <line x1="-110.9" y1="64.0" x2="-123.0" y2="71.0" stroke="#34435C" stroke-width="1.6"/>
+          <line x1="-116.0" y1="54.1" x2="-121.4" y2="56.6" stroke="#34435C" stroke-width="1"/>
+          <line x1="-120.3" y1="43.8" x2="-125.9" y2="45.8" stroke="#34435C" stroke-width="1"/>
+          <line x1="-123.6" y1="33.1" x2="-129.4" y2="34.7" stroke="#34435C" stroke-width="1"/>
+          <line x1="-126.1" y1="22.2" x2="-132.0" y2="23.3" stroke="#34435C" stroke-width="1"/>
+          <line x1="-127.5" y1="11.2" x2="-133.5" y2="11.7" stroke="#34435C" stroke-width="1"/>
+          <line x1="-128.0" y1="0.0" x2="-142.0" y2="0.0" stroke="#00A0FD" stroke-width="1.6"/>
+          <line x1="-127.5" y1="-11.2" x2="-133.5" y2="-11.7" stroke="#34435C" stroke-width="1"/>
+          <line x1="-126.1" y1="-22.2" x2="-132.0" y2="-23.3" stroke="#34435C" stroke-width="1"/>
+          <line x1="-123.6" y1="-33.1" x2="-129.4" y2="-34.7" stroke="#34435C" stroke-width="1"/>
+          <line x1="-120.3" y1="-43.8" x2="-125.9" y2="-45.8" stroke="#34435C" stroke-width="1"/>
+          <line x1="-116.0" y1="-54.1" x2="-121.4" y2="-56.6" stroke="#34435C" stroke-width="1"/>
+          <line x1="-110.9" y1="-64.0" x2="-123.0" y2="-71.0" stroke="#34435C" stroke-width="1.6"/>
+          <line x1="-104.9" y1="-73.4" x2="-109.8" y2="-76.9" stroke="#34435C" stroke-width="1"/>
+          <line x1="-98.1" y1="-82.3" x2="-102.6" y2="-86.1" stroke="#34435C" stroke-width="1"/>
+          <line x1="-90.5" y1="-90.5" x2="-94.8" y2="-94.8" stroke="#34435C" stroke-width="1"/>
+          <line x1="-82.3" y1="-98.1" x2="-86.1" y2="-102.6" stroke="#34435C" stroke-width="1"/>
+          <line x1="-73.4" y1="-104.9" x2="-76.9" y2="-109.8" stroke="#34435C" stroke-width="1"/>
+          <line x1="-64.0" y1="-110.9" x2="-71.0" y2="-123.0" stroke="#34435C" stroke-width="1.6"/>
+          <line x1="-54.1" y1="-116.0" x2="-56.6" y2="-121.4" stroke="#34435C" stroke-width="1"/>
+          <line x1="-43.8" y1="-120.3" x2="-45.8" y2="-125.9" stroke="#34435C" stroke-width="1"/>
+          <line x1="-33.1" y1="-123.6" x2="-34.7" y2="-129.4" stroke="#34435C" stroke-width="1"/>
+          <line x1="-22.2" y1="-126.1" x2="-23.3" y2="-132.0" stroke="#34435C" stroke-width="1"/>
+          <line x1="-11.2" y1="-127.5" x2="-11.7" y2="-133.5" stroke="#34435C" stroke-width="1"/>
+          <line x1="-0.0" y1="-128.0" x2="-0.0" y2="-142.0" stroke="#00A0FD" stroke-width="1.6"/>
+          <line x1="11.2" y1="-127.5" x2="11.7" y2="-133.5" stroke="#34435C" stroke-width="1"/>
+          <line x1="22.2" y1="-126.1" x2="23.3" y2="-132.0" stroke="#34435C" stroke-width="1"/>
+          <line x1="33.1" y1="-123.6" x2="34.7" y2="-129.4" stroke="#34435C" stroke-width="1"/>
+          <line x1="43.8" y1="-120.3" x2="45.8" y2="-125.9" stroke="#34435C" stroke-width="1"/>
+          <line x1="54.1" y1="-116.0" x2="56.6" y2="-121.4" stroke="#34435C" stroke-width="1"/>
+          <line x1="64.0" y1="-110.9" x2="71.0" y2="-123.0" stroke="#34435C" stroke-width="1.6"/>
+          <line x1="73.4" y1="-104.9" x2="76.9" y2="-109.8" stroke="#34435C" stroke-width="1"/>
+          <line x1="82.3" y1="-98.1" x2="86.1" y2="-102.6" stroke="#34435C" stroke-width="1"/>
+          <line x1="90.5" y1="-90.5" x2="94.8" y2="-94.8" stroke="#34435C" stroke-width="1"/>
+          <line x1="98.1" y1="-82.3" x2="102.6" y2="-86.1" stroke="#34435C" stroke-width="1"/>
+          <line x1="104.9" y1="-73.4" x2="109.8" y2="-76.9" stroke="#34435C" stroke-width="1"/>
+          <line x1="110.9" y1="-64.0" x2="123.0" y2="-71.0" stroke="#34435C" stroke-width="1.6"/>
+          <line x1="116.0" y1="-54.1" x2="121.4" y2="-56.6" stroke="#34435C" stroke-width="1"/>
+          <line x1="120.3" y1="-43.8" x2="125.9" y2="-45.8" stroke="#34435C" stroke-width="1"/>
+          <line x1="123.6" y1="-33.1" x2="129.4" y2="-34.7" stroke="#34435C" stroke-width="1"/>
+          <line x1="126.1" y1="-22.2" x2="132.0" y2="-23.3" stroke="#34435C" stroke-width="1"/>
+          <line x1="127.5" y1="-11.2" x2="133.5" y2="-11.7" stroke="#34435C" stroke-width="1"/>
+          <path d="M-150 0H-170M150 0H170M0 -150V-170M0 150V170" stroke="#34435C" stroke-width="1"/>
           <!-- Zahnrad-Q: Ring + 8 Zähne drehen sich -->
           <g transform="scale(1.66)">
             <g id="rotor" fill="#00A0FD">
