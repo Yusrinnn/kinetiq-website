@@ -158,7 +158,7 @@ document.getElementById('anfrage').addEventListener('submit',function(e){
   e.preventDefault();
   var v=function(id){return document.getElementById(id).value.trim()};
   var body='Name: '+v('f-name')+'\nFirma: '+v('f-firma')+'\nTelefon: '+v('f-tel')+'\n\n'+v('f-text');
-  location.href='mailto:justin@kinetiq-automation.de,frederik@kinetiq-automation.de,christian@kinetiq-automation.de?subject='+encodeURIComponent('Anfrage über kinetiq-automation.de – '+v('f-name'))+'&body='+encodeURIComponent(body);
+  location.href='mailto:info@kinetiq-automation.de?subject='+encodeURIComponent('Anfrage über kinetiq-automation.de – '+v('f-name'))+'&body='+encodeURIComponent(body);
 });
 </script>
 </body>
