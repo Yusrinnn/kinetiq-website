@@ -68,6 +68,14 @@ textarea{min-height:120px;resize:vertical}
 button{font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:.03em;background:var(--blau);color:var(--navy);border:0;border-radius:6px;padding:13px 20px;cursor:pointer;width:fit-content}
 button:hover{background:#33B4FF}
 .hint{font-size:13px;color:var(--grau)}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;font-size:16px;letter-spacing:.03em;background:var(--blau);color:var(--navy);border:1px solid var(--blau);border-radius:6px;padding:13px 22px;text-decoration:none}
+.btn:hover{background:#33B4FF;border-color:#33B4FF}
+.btn .k{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.btn.ghost{background:transparent;color:var(--stahl);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--blau);color:var(--blau);background:transparent}
+.btn:focus-visible{outline:3px solid var(--blau);outline-offset:2px}
+
 
 footer .wrap{padding-block:30px 40px;display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;color:var(--grau);font-size:14px;border-top:1px solid var(--line);margin-top:28px}
 footer nav{display:flex;gap:18px}
@@ -131,17 +139,12 @@ footer a:hover{color:var(--blau)}
     <p class="label">Anfrage</p>
     <h2 id="f">Sie möchten sich bei uns melden?</h2>
     <div class="formbox">
-      <p>Ein paar Eckdaten reichen. Wir melden uns schnellstmöglich zurück.</p>
-      <form id="anfrage">
-        <label>Name<input id="f-name" name="name" required autocomplete="name"></label>
-        <label>Firma<input id="f-firma" name="firma" autocomplete="organization"></label>
-        <label>Telefon (optional)<input id="f-tel" name="tel" type="tel" autocomplete="tel"></label>
-        <label class="full">Worum geht es?<textarea id="f-text" name="text" required placeholder="z. B. Anlage, Problem, gewünschter Zeitraum"></textarea></label>
-        <div class="full" style="display:grid;gap:8px">
-          <button type="submit">Anfrage per E-Mail senden</button>
-          <span class="hint">Öffnet Ihr E-Mail-Programm mit der fertigen Nachricht an uns. Auf dieser Website werden keine Daten gespeichert.</span>
-        </div>
-      </form>
+      <p>Schreiben Sie uns kurz, worum es geht, oder rufen Sie direkt an. Wir melden uns schnellstmöglich zurück.</p>
+      <div class="cta">
+        <a class="btn" href="mailto:info@kinetiq-automation.de?subject=Anfrage%20%C3%BCber%20kinetiq-automation.de&amp;body=Guten Tag,%0D%0A%0D%0Awir interessieren uns f%C3%BCr Ihre Unterst%C3%BCtzung bei:%0D%0A%0D%0A%0D%0AName:%0D%0AFirma:%0D%0ATelefon:%0D%0A"><svg class="k" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="1.6"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg>E-Mail schreiben</a>
+        <a class="btn ghost" href="tel:+491791763831"><svg class="k" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.2"/><path d="M10.5 18h3"/></svg>Anrufen</a>
+      </div>
+      <span class="hint">info@kinetiq-automation.de · +49 179 1763831</span>
     </div>
   </section>
 </main>
@@ -153,13 +156,5 @@ footer a:hover{color:var(--blau)}
   </div>
 </footer>
 
-<script>
-document.getElementById('anfrage').addEventListener('submit',function(e){
-  e.preventDefault();
-  var v=function(id){return document.getElementById(id).value.trim()};
-  var body='Name: '+v('f-name')+'\nFirma: '+v('f-firma')+'\nTelefon: '+v('f-tel')+'\n\n'+v('f-text');
-  location.href='mailto:info@kinetiq-automation.de?subject='+encodeURIComponent('Anfrage über kinetiq-automation.de – '+v('f-name'))+'&body='+encodeURIComponent(body);
-});
-</script>
 </body>
 </html>
