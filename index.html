@@ -16,7 +16,7 @@
 @font-face{font-family:"Chakra Petch";font-weight:500;font-display:swap;src:url(assets/fonts/ChakraPetch-Medium.woff2) format("woff2")}
 @font-face{font-family:"Chakra Petch";font-weight:600;font-display:swap;src:url(assets/fonts/ChakraPetch-SemiBold.woff2) format("woff2")}
 @font-face{font-family:"Chakra Petch";font-weight:700;font-display:swap;src:url(assets/fonts/ChakraPetch-Bold.woff2) format("woff2")}
-/* Einseitige Firmenseite: Menüleiste, Hero mit drehendem Zahnrad-Q im Greifer, Leistungen, Ablauf, Team, Kontakt */
+/* Einseitige Firmenseite: Menüleiste, Hero mit Säulenfeld und Zahnrad-Q, Leistungen, Ablauf, Team, Kontakt */
 :root{--blau:#00A0FD;--blau-tief:#0077C2;--navy:#080C15;--flaeche:#0C1220;--panel:#0F1727;--line:#22304A;--stahl:#F4F6F9;--grau:#8D97A8;--lead:#C2CAD8;
 --display:"Chakra Petch","Segoe UI",system-ui,sans-serif;--body:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color-scheme:dark}
 *{box-sizing:border-box}
@@ -63,8 +63,8 @@ p{margin:0}
 .facts li{display:flex;align-items:center;gap:8px}
 .facts li::before{content:"";width:6px;height:6px;border-radius:1px;background:var(--blau)}
 .art{display:flex;justify-content:center}
-.art svg{width:min(100%,460px);height:auto}
-@media (max-width:880px){.hero .wrap{grid-template-columns:1fr;padding-block:48px 40px}.art{order:-1}.art svg{width:min(80vw,320px)}}
+.art canvas{display:block;width:min(100%,520px);aspect-ratio:52/42;height:auto;touch-action:pan-y}
+@media (max-width:880px){.hero .wrap{grid-template-columns:1fr;padding-block:48px 40px}.art{order:-1}.art canvas{width:min(88vw,360px)}}
 
 /* Abschnitte */
 section.blk{padding-block:88px}
@@ -167,116 +167,8 @@ footer a:hover{color:#fff}
         </ul>
       </div>
       <div class="art" aria-hidden="true">
-        <!-- Zahnrad-Q dreht sich (Schweif steht) in einem technischen Messkreis -->
-        <svg id="qart" viewBox="-180 -180 360 360" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="arm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1A2436"/><stop offset="1" stop-color="#1A2436" stop-opacity="0"/></linearGradient>
-            <linearGradient id="met" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1B2638"/><stop offset=".5" stop-color="#2A374D"/><stop offset="1" stop-color="#1B2638"/></linearGradient>
-            <linearGradient id="cyl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4A5C78"/><stop offset=".28" stop-color="#2E3C54"/><stop offset=".75" stop-color="#18212F"/><stop offset="1" stop-color="#0F1622"/></linearGradient>
-            <linearGradient id="cylD" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#33425A"/><stop offset=".3" stop-color="#202B3D"/><stop offset="1" stop-color="#0C121C"/></linearGradient>
-            <linearGradient id="cylArm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3E4E69"/><stop offset=".3" stop-color="#26324A"/><stop offset=".8" stop-color="#141C29"/><stop offset="1" stop-color="#0D131D"/></linearGradient>
-            <linearGradient id="palm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3C4C66"/><stop offset=".35" stop-color="#28344A"/><stop offset="1" stop-color="#121A26"/></linearGradient>
-            <radialGradient id="joint" cx=".38" cy=".35" r=".7"><stop offset="0" stop-color="#3E4E69"/><stop offset="1" stop-color="#0C1220"/></radialGradient>
-            <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#000" flood-opacity=".55"/></filter>
-            <linearGradient id="fadeL" x1="0" y1="0" x2="1" y2="1"><stop offset=".66" stop-color="#fff"/><stop offset=".97" stop-color="#fff" stop-opacity="0"/></linearGradient>
-            <mask id="mL" maskUnits="userSpaceOnUse" x="-200" y="-112" width="450" height="370"><rect x="-200" y="-112" width="450" height="370" fill="url(#fadeL)"/></mask>
-            <radialGradient id="glow"><stop offset="0" stop-color="#00A0FD" stop-opacity=".22"/><stop offset="1" stop-color="#00A0FD" stop-opacity="0"/></radialGradient>
-          </defs>
-          <circle r="150" fill="url(#glow)"/>
-          <!-- Technischer Messkreis um das Zahnrad: feine Skala, steht still -->
-          <circle r="128" fill="none" stroke="#22304A" stroke-width="1"/>
-          <circle r="150" fill="none" stroke="#22304A" stroke-width="1" stroke-dasharray="2 6"/>
-          <line x1="128.0" y1="0.0" x2="142.0" y2="0.0" stroke="#00A0FD" stroke-width="1.6"/>
-          <line x1="127.5" y1="11.2" x2="133.5" y2="11.7" stroke="#34435C" stroke-width="1"/>
-          <line x1="126.1" y1="22.2" x2="132.0" y2="23.3" stroke="#34435C" stroke-width="1"/>
-          <line x1="123.6" y1="33.1" x2="129.4" y2="34.7" stroke="#34435C" stroke-width="1"/>
-          <line x1="120.3" y1="43.8" x2="125.9" y2="45.8" stroke="#34435C" stroke-width="1"/>
-          <line x1="116.0" y1="54.1" x2="121.4" y2="56.6" stroke="#34435C" stroke-width="1"/>
-          <line x1="110.9" y1="64.0" x2="123.0" y2="71.0" stroke="#34435C" stroke-width="1.6"/>
-          <line x1="104.9" y1="73.4" x2="109.8" y2="76.9" stroke="#34435C" stroke-width="1"/>
-          <line x1="98.1" y1="82.3" x2="102.6" y2="86.1" stroke="#34435C" stroke-width="1"/>
-          <line x1="90.5" y1="90.5" x2="94.8" y2="94.8" stroke="#34435C" stroke-width="1"/>
-          <line x1="82.3" y1="98.1" x2="86.1" y2="102.6" stroke="#34435C" stroke-width="1"/>
-          <line x1="73.4" y1="104.9" x2="76.9" y2="109.8" stroke="#34435C" stroke-width="1"/>
-          <line x1="64.0" y1="110.9" x2="71.0" y2="123.0" stroke="#34435C" stroke-width="1.6"/>
-          <line x1="54.1" y1="116.0" x2="56.6" y2="121.4" stroke="#34435C" stroke-width="1"/>
-          <line x1="43.8" y1="120.3" x2="45.8" y2="125.9" stroke="#34435C" stroke-width="1"/>
-          <line x1="33.1" y1="123.6" x2="34.7" y2="129.4" stroke="#34435C" stroke-width="1"/>
-          <line x1="22.2" y1="126.1" x2="23.3" y2="132.0" stroke="#34435C" stroke-width="1"/>
-          <line x1="11.2" y1="127.5" x2="11.7" y2="133.5" stroke="#34435C" stroke-width="1"/>
-          <line x1="0.0" y1="128.0" x2="0.0" y2="142.0" stroke="#00A0FD" stroke-width="1.6"/>
-          <line x1="-11.2" y1="127.5" x2="-11.7" y2="133.5" stroke="#34435C" stroke-width="1"/>
-          <line x1="-22.2" y1="126.1" x2="-23.3" y2="132.0" stroke="#34435C" stroke-width="1"/>
-          <line x1="-33.1" y1="123.6" x2="-34.7" y2="129.4" stroke="#34435C" stroke-width="1"/>
-          <line x1="-43.8" y1="120.3" x2="-45.8" y2="125.9" stroke="#34435C" stroke-width="1"/>
-          <line x1="-54.1" y1="116.0" x2="-56.6" y2="121.4" stroke="#34435C" stroke-width="1"/>
-          <line x1="-64.0" y1="110.9" x2="-71.0" y2="123.0" stroke="#34435C" stroke-width="1.6"/>
-          <line x1="-73.4" y1="104.9" x2="-76.9" y2="109.8" stroke="#34435C" stroke-width="1"/>
-          <line x1="-82.3" y1="98.1" x2="-86.1" y2="102.6" stroke="#34435C" stroke-width="1"/>
-          <line x1="-90.5" y1="90.5" x2="-94.8" y2="94.8" stroke="#34435C" stroke-width="1"/>
-          <line x1="-98.1" y1="82.3" x2="-102.6" y2="86.1" stroke="#34435C" stroke-width="1"/>
-          <line x1="-104.9" y1="73.4" x2="-109.8" y2="76.9" stroke="#34435C" stroke-width="1"/>
-          <line x1="-110.9" y1="64.0" x2="-123.0" y2="71.0" stroke="#34435C" stroke-width="1.6"/>
-          <line x1="-116.0" y1="54.1" x2="-121.4" y2="56.6" stroke="#34435C" stroke-width="1"/>
-          <line x1="-120.3" y1="43.8" x2="-125.9" y2="45.8" stroke="#34435C" stroke-width="1"/>
-          <line x1="-123.6" y1="33.1" x2="-129.4" y2="34.7" stroke="#34435C" stroke-width="1"/>
-          <line x1="-126.1" y1="22.2" x2="-132.0" y2="23.3" stroke="#34435C" stroke-width="1"/>
-          <line x1="-127.5" y1="11.2" x2="-133.5" y2="11.7" stroke="#34435C" stroke-width="1"/>
-          <line x1="-128.0" y1="0.0" x2="-142.0" y2="0.0" stroke="#00A0FD" stroke-width="1.6"/>
-          <line x1="-127.5" y1="-11.2" x2="-133.5" y2="-11.7" stroke="#34435C" stroke-width="1"/>
-          <line x1="-126.1" y1="-22.2" x2="-132.0" y2="-23.3" stroke="#34435C" stroke-width="1"/>
-          <line x1="-123.6" y1="-33.1" x2="-129.4" y2="-34.7" stroke="#34435C" stroke-width="1"/>
-          <line x1="-120.3" y1="-43.8" x2="-125.9" y2="-45.8" stroke="#34435C" stroke-width="1"/>
-          <line x1="-116.0" y1="-54.1" x2="-121.4" y2="-56.6" stroke="#34435C" stroke-width="1"/>
-          <line x1="-110.9" y1="-64.0" x2="-123.0" y2="-71.0" stroke="#34435C" stroke-width="1.6"/>
-          <line x1="-104.9" y1="-73.4" x2="-109.8" y2="-76.9" stroke="#34435C" stroke-width="1"/>
-          <line x1="-98.1" y1="-82.3" x2="-102.6" y2="-86.1" stroke="#34435C" stroke-width="1"/>
-          <line x1="-90.5" y1="-90.5" x2="-94.8" y2="-94.8" stroke="#34435C" stroke-width="1"/>
-          <line x1="-82.3" y1="-98.1" x2="-86.1" y2="-102.6" stroke="#34435C" stroke-width="1"/>
-          <line x1="-73.4" y1="-104.9" x2="-76.9" y2="-109.8" stroke="#34435C" stroke-width="1"/>
-          <line x1="-64.0" y1="-110.9" x2="-71.0" y2="-123.0" stroke="#34435C" stroke-width="1.6"/>
-          <line x1="-54.1" y1="-116.0" x2="-56.6" y2="-121.4" stroke="#34435C" stroke-width="1"/>
-          <line x1="-43.8" y1="-120.3" x2="-45.8" y2="-125.9" stroke="#34435C" stroke-width="1"/>
-          <line x1="-33.1" y1="-123.6" x2="-34.7" y2="-129.4" stroke="#34435C" stroke-width="1"/>
-          <line x1="-22.2" y1="-126.1" x2="-23.3" y2="-132.0" stroke="#34435C" stroke-width="1"/>
-          <line x1="-11.2" y1="-127.5" x2="-11.7" y2="-133.5" stroke="#34435C" stroke-width="1"/>
-          <line x1="-0.0" y1="-128.0" x2="-0.0" y2="-142.0" stroke="#00A0FD" stroke-width="1.6"/>
-          <line x1="11.2" y1="-127.5" x2="11.7" y2="-133.5" stroke="#34435C" stroke-width="1"/>
-          <line x1="22.2" y1="-126.1" x2="23.3" y2="-132.0" stroke="#34435C" stroke-width="1"/>
-          <line x1="33.1" y1="-123.6" x2="34.7" y2="-129.4" stroke="#34435C" stroke-width="1"/>
-          <line x1="43.8" y1="-120.3" x2="45.8" y2="-125.9" stroke="#34435C" stroke-width="1"/>
-          <line x1="54.1" y1="-116.0" x2="56.6" y2="-121.4" stroke="#34435C" stroke-width="1"/>
-          <line x1="64.0" y1="-110.9" x2="71.0" y2="-123.0" stroke="#34435C" stroke-width="1.6"/>
-          <line x1="73.4" y1="-104.9" x2="76.9" y2="-109.8" stroke="#34435C" stroke-width="1"/>
-          <line x1="82.3" y1="-98.1" x2="86.1" y2="-102.6" stroke="#34435C" stroke-width="1"/>
-          <line x1="90.5" y1="-90.5" x2="94.8" y2="-94.8" stroke="#34435C" stroke-width="1"/>
-          <line x1="98.1" y1="-82.3" x2="102.6" y2="-86.1" stroke="#34435C" stroke-width="1"/>
-          <line x1="104.9" y1="-73.4" x2="109.8" y2="-76.9" stroke="#34435C" stroke-width="1"/>
-          <line x1="110.9" y1="-64.0" x2="123.0" y2="-71.0" stroke="#34435C" stroke-width="1.6"/>
-          <line x1="116.0" y1="-54.1" x2="121.4" y2="-56.6" stroke="#34435C" stroke-width="1"/>
-          <line x1="120.3" y1="-43.8" x2="125.9" y2="-45.8" stroke="#34435C" stroke-width="1"/>
-          <line x1="123.6" y1="-33.1" x2="129.4" y2="-34.7" stroke="#34435C" stroke-width="1"/>
-          <line x1="126.1" y1="-22.2" x2="132.0" y2="-23.3" stroke="#34435C" stroke-width="1"/>
-          <line x1="127.5" y1="-11.2" x2="133.5" y2="-11.7" stroke="#34435C" stroke-width="1"/>
-          <path d="M-150 0H-170M150 0H170M0 -150V-170M0 150V170" stroke="#34435C" stroke-width="1"/>
-          <!-- Zahnrad-Q: Ring + 8 Zähne drehen sich -->
-          <g transform="scale(1.66)">
-            <g id="rotor" fill="#00A0FD">
-              <path fill-rule="evenodd" d="M0-50A50 50 0 1 1 0 50A50 50 0 1 1 0-50ZM0-30A30 30 0 1 0 0 30A30 30 0 1 0 0-30Z"/>
-              <rect x="-6" y="-59" width="12" height="11"/>
-              <rect x="-6" y="-59" width="12" height="11" transform="rotate(45)"/>
-              <rect x="-6" y="-59" width="12" height="11" transform="rotate(90)"/>
-              <rect x="-6" y="-59" width="12" height="11" transform="rotate(135)"/>
-              <rect x="-6" y="-59" width="12" height="11" transform="rotate(180)"/>
-              <rect x="-6" y="-59" width="12" height="11" transform="rotate(225)"/>
-              <rect x="-6" y="-59" width="12" height="11" transform="rotate(270)"/>
-              <rect x="-6" y="-59" width="12" height="11" transform="rotate(315)"/>
-              <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="32s" repeatCount="indefinite"/>
-            </g>
-            <!-- Q-Schweif steht still; dunkle Kontur erzeugt den Schnitt im Ring -->
-            <polygon points="4,16 16,4 62,50 38,50" fill="#00A0FD" stroke="#080C15" stroke-width="5" stroke-linejoin="miter" paint-order="stroke"/>
-          </g>
-        </svg>
+        <!-- Säulenfeld: isometrische Stößel heben sich unter der Maus, Zahnrad-Q schwebt darüber (Canvas, eigener Code) -->
+        <canvas id="feld" width="520" height="420"></canvas>
       </div>
     </div>
   </section>
@@ -424,9 +316,6 @@ footer a:hover{color:#fff}
   </div>
 </footer>
 
-<script>
-// Bei „Bewegung reduzieren“ steht das Zahnrad still
-try{if(matchMedia('(prefers-reduced-motion: reduce)').matches){var s=document.getElementById('qart');s.pauseAnimations();s.setCurrentTime(0);}}catch(e){}
-</script>
+<script src="assets/feld.js" defer></script>
 </body>
 </html>
