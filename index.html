@@ -121,7 +121,7 @@ section.blk.alt{background:var(--flaeche);border-block:1px solid var(--line)}
 .an .info{display:grid}
 .info strong{font-family:var(--display);font-weight:600;font-size:19px}
 .info span{color:var(--lead);font-size:16px;line-height:1.55}
-@media (max-width:520px){.an .stl{display:grid;grid-template-columns:1fr 1fr}.an .stl li:nth-child(5n){grid-column:1/-1}.stl button{width:100%;white-space:nowrap;text-align:left;padding:8px 12px}}
+@media (max-width:520px){.an .stl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.stl button{width:100%;white-space:nowrap;text-align:left;padding:8px 10px;font-size:clamp(11px,3.45vw,15px);letter-spacing:0}}
 
 /* Ablauf */
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:0;counter-reset:s;border:1px solid var(--line);border-radius:10px;overflow:hidden}
