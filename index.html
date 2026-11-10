@@ -93,6 +93,36 @@ section.blk.alt{background:var(--flaeche);border-block:1px solid var(--line)}
 .card li{padding-left:16px;position:relative}
 .card li::before{content:"";position:absolute;left:0;top:.7em;width:8px;height:1.5px;background:var(--blau)}
 
+/* Anlage: Taktstraße als SVG-Animation, Anzeigen darüber, Stationen darunter */
+#anlage{border-top:1px solid var(--line)}
+.hud{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:0 0 14px}
+.hud div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 16px;display:grid;gap:2px;min-width:0}
+.hud dt{color:var(--grau);font-size:13px}
+.hud dd{margin:0;font-family:var(--display);font-weight:600;font-size:20px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.hud .ok{color:#3DDC97}
+@media (max-width:760px){.hud{grid-template-columns:1fr 1fr;gap:8px}.hud div{padding:9px 14px}.hud dd{font-size:18px}.hud div:last-child{grid-column:1/-1}}
+.plan{background:#0B1322;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.plan svg{display:block;width:100%;height:auto}
+.plan:empty{display:none}
+@media (max-width:640px){.plan .bdg circle{r:21px}.plan .bdg text{font-size:25px;transform:translateY(3px)}.plan .sel{r:25px}}
+.stl{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:14px;counter-reset:st}
+.stl li{counter-increment:st}
+.stl button{font:inherit;font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:.02em;color:var(--lead);background:var(--panel);border:1px solid var(--line);border-radius:8px;min-height:44px;padding:0 14px;cursor:pointer;white-space:nowrap}
+.stl button::before{content:counter(st) " ";color:var(--blau)}
+.stl button:hover{border-color:var(--blau);color:#fff}
+.stl button:focus-visible{outline:3px solid var(--blau);outline-offset:2px}
+.stl button[aria-pressed=true]{background:var(--blau);border-color:var(--blau);color:var(--navy)}
+.stl button[aria-pressed=true]::before{color:var(--navy)}
+.stl h3{font-size:18px;margin:8px 0 2px}
+.stl p{color:var(--lead);font-size:15px}
+.an .stl{display:flex;flex-wrap:wrap;gap:8px}
+.an .stl h3,.an .stl p{display:none}
+.info{display:none;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin-top:14px;min-height:104px;gap:6px;align-content:start}
+.an .info{display:grid}
+.info strong{font-family:var(--display);font-weight:600;font-size:19px}
+.info span{color:var(--lead);font-size:16px;line-height:1.55}
+@media (max-width:520px){.an .stl{display:grid;grid-template-columns:1fr 1fr}.stl button{width:100%;white-space:normal;text-align:left;padding:8px 12px}}
+
 /* Ablauf */
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:0;counter-reset:s;border:1px solid var(--line);border-radius:10px;overflow:hidden}
 .step{padding:28px 24px;display:grid;gap:10px;align-content:start;border-right:1px solid var(--line);background:var(--panel)}
@@ -150,7 +180,7 @@ footer a:hover{color:#fff}
   <div class="wrap">
     <a href="#start" aria-label="Kinetiq Automation – zum Seitenanfang"><img src="assets/img/logo.svg" alt="Kinetiq Automation" width="150" height="45"></a>
     <nav aria-label="Hauptmenü">
-      <span class="links"><a href="#leistungen">Leistungen</a><a href="#ablauf">Ablauf</a><a href="#team">Team</a></span>
+      <span class="links"><a href="#leistungen">Leistungen</a><a href="#anlage">Anlage</a><a href="#ablauf">Ablauf</a><a href="#team">Team</a></span>
       <span class="soc">
         <a href="https://www.instagram.com/kinetiq_automation/" rel="noopener" target="_blank" aria-label="Kinetiq Automation auf Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6" fill="currentColor"/></svg></a>
         <a href="https://www.tiktok.com/@kinetiqautomation" rel="noopener" target="_blank" aria-label="Kinetiq Automation auf TikTok" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 3.5v11.2a3.6 3.6 0 1 1-3.6-3.6"/><path d="M13.5 3.5c.5 2.7 2.4 4.5 5.2 4.8"/></svg></a>
@@ -217,6 +247,38 @@ footer a:hover{color:#fff}
           <ul><li>Modernisierung von Altanlagen</li><li>Inbetriebnahme vor Ort</li><li>Wartung &amp; Support</li></ul>
         </article>
       </div>
+    </div>
+  </section>
+
+  <section class="blk" id="anlage" aria-labelledby="h-an">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Anlage</p>
+        <h2 id="h-an">Vom Rohteil zum fertigen Teil.</h2>
+        <p>So läuft ein Bauteil durch eine Anlage, wie wir sie planen, bauen und programmieren.</p>
+      </div>
+      <dl class="hud" aria-hidden="true">
+        <div><dt>Status</dt><dd class="ok">Anlage läuft</dd></div>
+        <div><dt>Fertige Teile</dt><dd id="anl-stk">0</dd></div>
+        <div><dt>Taktzeit</dt><dd id="anl-takt">7,5 s</dd></div>
+        <div><dt>Laufzeit</dt><dd id="anl-laufzeit">00:00</dd></div>
+        <div><dt>Phase</dt><dd id="anl-phase">Transport</dd></div>
+      </dl>
+      <!-- Taktanlage in der Draufsicht, gezeichnet von assets/anlage.js -->
+      <div class="plan" id="anl-svg"></div>
+      <ol class="stl" id="anl-st">
+        <li data-p="20,78"><button type="button" aria-pressed="false">Konstruktion</button><h3>Erst der Plan</h3><p>Bevor Metall bewegt wird, entsteht die Lösung als Konstruktion.</p></li>
+        <li data-p="20,173"><button type="button" aria-pressed="false">Analyse</button><h3>Vor Ort messen</h3><p>Wir nehmen Bauteil und Prozess direkt an Ihrer Anlage auf.</p></li>
+        <li data-p="386,30"><button type="button" aria-pressed="false">Robotik</button><h3>Teile handhaben</h3><p>Der Roboter nimmt die Rohteile von der Platte und legt sie auf das Förderband. Greifer und Bahn passen zum Bauteil.</p></li>
+        <li data-p="470,74"><button type="button" aria-pressed="false">Fördertechnik</button><h3>Puffern und zuführen</h3><p>Das Stauförderband puffert die Teile und führt sie im Takt der Zelle zu.</p></li>
+        <li data-p="184,208"><button type="button" aria-pressed="false">Sicherheitstechnik</button><h3>Sicher von Anfang an</h3><p>Schutzzaun, Lichtgitter und Not-Halt gehören zur Zelle.</p></li>
+        <li data-p="710,50"><button type="button" aria-pressed="false">Vorrichtungen</button><h3>Fest gespannt, genau gefertigt</h3><p>Die Vorrichtung hält das Bauteil bei jedem Zyklus an derselben Stelle. Wir konstruieren Greifer und Vorrichtungen passend zum Teil.</p></li>
+        <li data-p="400,264"><button type="button" aria-pressed="false">Retrofit</button><h3>Bestand modernisieren</h3><p>Ihre vorhandene Maschine bekommt eine neue Steuerung und läuft weiter.</p></li>
+        <li data-p="330,476"><button type="button" aria-pressed="false">Steuerung</button><h3>SPS und Bedienung</h3><p>Die Steuerung verbindet alle Stationen. Die Bedienung bleibt einfach.</p></li>
+        <li data-p="766,474"><button type="button" aria-pressed="false">Inbetriebnahme</button><h3>Übergabe und Service</h3><p>Wir nehmen die Anlage mit Ihnen in Betrieb und unterweisen Ihr Team. Danach bleiben wir Ihr fester Ansprechpartner.</p></li>
+        <li data-p="690,456"><button type="button" aria-pressed="false">Prozessoptimierung</button><h3>Messen, auswerten, verbessern</h3><p>Wir werten Taktzeiten und Stillstände aus und leiten daraus umsetzbare Verbesserungen ab.</p></li>
+      </ol>
+      <div class="info" aria-live="polite"><strong id="anl-titel">Zehn Stationen, eine Anlage</strong><span id="anl-text">Wählen Sie eine Station, um mehr zu erfahren.</span></div>
     </div>
   </section>
 
@@ -327,5 +389,6 @@ footer a:hover{color:#fff}
 </footer>
 
 <script src="assets/feld.js" defer></script>
+<script src="assets/anlage.js" defer></script>
 </body>
 </html>
